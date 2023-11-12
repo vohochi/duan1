@@ -1,0 +1,44 @@
+ ul {
+   list-style: none;
+   padding: 0;
+ }
+
+ li {
+   border: 1px solid #ddd;
+   margin: 10px 0;
+   padding: 10px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ img {
+   max-width: 100px;
+   max-height: 100px;
+   margin-right: 10px;
+ }
+
+ /* Nút xóa sản phẩm */
+ a {
+   color: #ff0000;
+   text-decoration: none;
+   font-weight: bold;
+ }
+
+ .total-price {
+   margin-top: 20px;
+   font-weight: bold;
+ }
+
+ /* Style cho nút cập nhật số lượng */
+ .update-button {
+   background-color: #007BFF;
+   color: white;
+   border: none;
+   padding: 5px 10px;
+   cursor: pointer;
+ }
+
+ .update-button:hover {
+   background-color: #0056b3;
+ }

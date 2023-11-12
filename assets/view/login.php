@@ -1,74 +1,180 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
+<!-- dang nhap -->
 <!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="../assets/css/login.css">
+<html lang="en">
+
 <head>
-    <title>Login Page</title>
-    <!--Made with love by Mutiullah Samim -->
-
-    <!--Bootsrap 4 CDN-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <!--Fontawesome CDN-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-    <!--Custom styles-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/login.css">
+  <title>Dangnhap</title>
+  <link rel="shortcut icon" href="../img/icon.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/dangnhap.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="d-flex justify-content-center h-100">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Sign In</h3>
-                    <div class="d-flex justify-content-end social_icon">
-                        <span><i class="fab fa-facebook-square"></i></span>
-                        <span><i class="fab fa-google-plus-square"></i></span>
-                        <span><i class="fab fa-twitter-square"></i></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <form action="../model/login_process.php" method="post">
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input type="text" class="form-control" name="usr" placeholder="username">
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Open+Sans:wght@300;400&display=swap');
 
-                        </div>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="password" class="form-control" name="pwd" placeholder="password">
-                        </div>
-                        <div class="row align-items-center remember">
-                            <input type="checkbox">Remember Me
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Login" class="btn float-right login_btn">
-                        </div>
-                    </form>
-                </div>
-                <div class="card-footer">
-                    <div class="d-flex justify-content-center links">
-                    Don't have an account?<a href="register.php">Sign Up</a>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a href="forgotpass.php">Forgot your password?</a>
-                    </div>
-                </div>
-            </div>
+  :root {
+    --success-color: rgb(50, 248, 50);
+    --error-color: rgb(255, 2, 2);
+  }
+
+  body {
+    background: url('../img/background1.png');
+    background-size: cover;
+    background-position-y: -40px;
+    font-size: 14px;
+  }
+
+  #wrapper {
+    background-image: url(../img/bookbanner.jpg);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #form-login {
+    height: 30%;
+    max-width: 500px;
+    background-color: rgb(0, 0, 0, 0.8);
+    flex-grow: 1;
+    padding: 30px 30px 40px;
+    box-shadow: 0px 0px 17px 2px rgba(255, 255, 255, 0.8);
+  }
+
+  .form-heading {
+    font-size: 25px;
+    color: #f5f5f5;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .form-group {
+    border-bottom: 1px solid #fff;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: flex;
+  }
+
+  .form-group i {
+    color: #fff;
+    font-size: 14px;
+    padding-right: 10px;
+  }
+
+  .form-input {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #f5f5f5;
+    flex-grow: 1;
+  }
+
+  .form-input::placeholder {
+    color: #f5f5f5;
+  }
+
+  #eye i {
+    padding-right: 0;
+    cursor: pointer;
+  }
+
+  .Forgot {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .Forgot a {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+  }
+
+  .form-submit {
+    background: transparent;
+    border: 1px solid #f5f5f5;
+    color: #fff;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    transition: 0.25s ease-in-out;
+    border-radius: 2px;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+
+  .form-submit:hover {
+    border: 1px solid #54a0ff;
+  }
+
+  .form-group.success input {
+    border-color: var(--success-color);
+  }
+
+  .form-group.error input {
+    border-color: var(--error-color);
+  }
+
+  .form-group input:focus {
+    outline: 0;
+    border-color: #777;
+  }
+
+  .form-group.error small {
+    visibility: visible;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+
+  .form-group small {
+    color: var(--error-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+
+  }
+  </style>
+
+  <div id="wrapper">
+    <form action="../model/login_process.php" method="post" id="form-login">
+      <h1 class="form-heading">Form đăng nhập</h1>
+      <div class="form-group">
+        <i class="fa-regular fa-user"></i>
+        <input type="nick name" name="usr" id="username" class="form-input" placeholder="Tên đăng nhập">
+        <small>Lỗi</small>
+      </div>
+
+      <div class="form-group">
+        <i class="fa-solid fa-key"></i>
+        <input type="password" class="form-input" name="pwd" id="password" placeholder="Mặt khẩu">
+        <input type="checkbox" id="chk">
+        <small>Lỗi</small>
+        <div id="eye">
         </div>
-    </div>
-    <form action="../model/login_process.php" method="post">
-    <!-- Các trường và nút đăng nhập ở đây -->
-</form>
+
+      </div>
+      <div class="row align-items-center remember">
+        <input type="checkbox">Remember Me
+      </div>
+      <div class="Forgot">
+        <a href="register.php">Register</a>
+        <a href="Forgot.php">Forgot password</a>
+      </div>
+      <a href=""><input type="submit" value="Đăng Nhập" class="form-submit"></a>
+    </form>
+
+  </div>
+  <!-- <script src="../js/dangnhap.js"> -->
+  </script>
 </body>
 
 </html>

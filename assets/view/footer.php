@@ -1,154 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-    <style>
-        /* Phần chung cho footer */
+  <style>
+  /*Footer*/
 
-.logo{
-    height: 100px;
+  footer {
+    width: 100%;
+    background: #eaeaea;
+  }
+
+  footer .footer_main {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  footer .footer_main .tag {
+    margin: 10px 0;
+  }
+
+  footer .footer_main .tag img {
     width: 100px;
-}
-.footer-top {
+    margin-bottom: 10px;
+  }
+
+  footer .footer_main .tag p {
+    width: 250px;
+    line-height: 22px;
+    text-align: justify;
+  }
+
+  footer .footer_main .tag h1 {
+    font-size: 25px;
+    margin: 25px 0;
+    color: #000;
+  }
+
+  footer .footer_main .tag a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin: 10px 0;
+  }
+
+  footer .footer_main .tag i {
+    margin-right: 10px;
+  }
+
+  footer .footer_main .tag .social_link i {
+    margin: 0 5px;
+  }
+
+  footer .footer_main .tag .search_bar {
+    width: 230px;
+    height: 30px;
+    background: rgba(202, 202, 202);
+    border-radius: 25px;
+  }
+
+  footer .footer_main .tag .search_bar input {
+    width: 200px;
+    padding: 2px 0;
+    position: relative;
+    top: 17%;
+    left: 6%;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    background: none;
+  }
+
+  footer .footer_main .tag .search_bar button {
+    padding: 7px 15px;
+    background: #089da1;
+    border: none;
+    margin-top: 15px;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  footer .end {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    color: #000;
+  }
 
-/* Logo and email */
-.footer-grid_section_w3layouts {
-    flex: 1 0 calc(33.33% - 20px); /* Chia thành 3 cột */
-    margin-bottom: 20px;
-}
+  footer .end span {
+    color: #089da1;
+    margin-left: 10px;
+  }
+  </style>
 
-/* Các cột cuối cùng */
-.footer-right {
-    flex: 2 0 calc(66.66% - 20px); /* Chia thành 2 cột */
-}
+  <!--Footer-->
 
-/* Các cột bên trong cột cuối cùng */
-.bottom-w3layouts-sec-nav {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+  <footer>
+    <div class="footer_main">
 
-/* Mỗi cột trong cột cuối cùng */
-.footer-grid_section_w3layouts {
-    flex: 1 0 calc(33.33% - 20px); /* Chia thành 4 cột */
-}
+      <div class="tag">
+        <img src="img/logo.png">
+        <p>
+          Sách không chỉ là công cụ học tập mà còn là phương tiện giải trí hiệu quả. Đọc sách giúp chúng ta xua tan căng
+          thẳng, mệt mỏi, có những giây phút thư giãn thoải mái.
+        </p>
 
+      </div>
 
+      <div class="tag">
+        <h1>Liên kết</h1>
+        <a href="#">Trang chủ</a>
+        <a href="#">Sản phẩm</a>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Liên hệ </a>
+        <a href="#">Tin tức</a>
 
-    </style>
+      </div>
 
-<footer>
-        <div class="container">
-            <div class="row footer-top">
-                <div class="col-lg-4 footer-grid_section_w3layouts">
-                    <h2 class="logo-2 mb-lg-4 mb-3">
-                        <a href="index.html">
-                            <img class="logo" src="img/logo33.png" alt="logo">
-                        </a>
-                    </h2>
-                    <p>Sản phẩm việt, chất lượng Âu.</p>
-                    <h4 class="sub-con-fo ad-info my-4">Catch on Social</h4>
-                    
-                </div>
-                <div class="col-lg-8 footer-right">
-                    <div class="w3layouts-news-letter">
-                        <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Newsletter</h3>
+      <div class="tag">
+        <h1>Thông tin liên lạc</h1>
+        <a href="#"><i class="fa-solid fa-phone"></i>114</a>
+        <a href="#"><i class="fa-solid fa-phone"></i>113</a>
+        <a href="#"><i class="fa-solid fa-envelope"></i>bookstore123@gmail.com</a>
 
-                        <p>Sản phẩm mang đến cho khách hàng một trãi nghiệm tốt nhất.</p>
-                        <form action="#" method="post" class="w3layouts-newsletter">
-                            <input type="email" name="Email" placeholder="Enter your email..." required="">
-                            <button class="btn1"><span class="fa fa-paper-plane-o" aria-hidden="true"></span></button>
+      </div>
 
-                        </form>
-                    </div>
-                    <div class="row mt-lg-4 bottom-w3layouts-sec-nav mx-0">
-                        <div class="col-md-4 footer-grid_section_w3layouts">
-                            <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Information</h3>
-                            <ul class="list-unstyled w3layouts-icons">
-                                <li>
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li class="mt-3">
-                                    <a href="about.html">About Us</a>
-                                </li>
-                                <li class="mt-3">
-                                    <a href="#">Gallery</a>
-                                </li>
-                                <li class="mt-3">
-                                    <a href="#">Services</a>
-                                </li>
-                                <li class="mt-3">
-                                    <a href="contact.html">Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 footer-grid_section_w3layouts">
-                            <!-- social icons -->
-                            <div class="agileinfo_social_icons">
-                                <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Customer Service</h3>
-                                <ul class="list-unstyled w3layouts-icons">
-
-                                    <li>
-                                        <a href="#">About Us</a>
-                                    </li>
-                                    <li class="mt-3">
-                                        <a href="#">Delivery & Returns</a>
-                                    </li>
-                                    <li class="mt-3">
-                                        <a href="#">Waranty</a>
-                                    </li>
-                                    <li class="mt-3">
-                                        <a href="#">Terms & Condition</a>
-                                    </li>
-                                    <li class="mt-3">
-                                        <a href="#">Privacy Plolicy</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- social icons -->
-                        </div>
-                        <div class="col-md-4 footer-grid_section_w3layouts my-md-0 my-5">
-                            <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Contact Info</h3>
-                            <div class="contact-info">
-                                <div class="footer-address-inf">
-                                    <h4 class="ad-info mb-2">Phone</h4>
-                                    <p>0100109106-011</p>
-                                </div>
-                                <div class="footer-address-inf my-4">
-                                    <h4 class="ad-info mb-2">Email </h4>
-                                    <p><a href="mailto:info@example.com">info@gmail.com</a></p>
-                                </div>
-                                <div class="footer-address-inf">
-                                    <h4 class="ad-info mb-2">Location</h4>
-                                    <p>Honey Avenue, New York City</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="cpy-right text-left row">
-                        <p class="col-md-10">© 2019 Bootie. All rights reserved | Design by
-                            <a href="http://w3layouts.com"> W3layouts.</a>
-                        </p>
-                        <!-- move top icon -->
-                        <a href="#home" class="move-top text-right col-md-2"><span class="fa fa-long-arrow-up" aria-hidden="true"></span></a>
-                        <!-- //move top icon -->
-                    </div>
-                </div>
-            </div>
+      <div class="tag">
+        <h1>Theo chúng tôi</h1>
+        <div class="social_link">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-linkedin-in"></i>
         </div>
-    </footer>
-    <!-- //footer -->
+
+      </div>
+
+      <div class="tag">
+        <h1>Bản tin</h1>
+        <div class="search_bar">
+          <input type="text" placeholder="Bạn gửi email ID ở đây">
+          <button type="submit">Đặt mua</button>
+        </div>
+      </div>
+
+    </div>
+
+
+  </footer>
+
+
+
+
+
+  <!-- //footer -->
 
 </body>
 
