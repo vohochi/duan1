@@ -172,6 +172,10 @@ ul span {
   top: 30%;
 }
 
+.cart {
+  text-decoration: none;
+}
+
 .point {
   top: 76%;
   right: -26%;
