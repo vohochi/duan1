@@ -58,26 +58,36 @@
 
     </nav>
 
-    <div class="main">
-
-      <!-- <div class="main_tag">
-                <h1>WELCOME TO<br><span>BOOK STORE</span></h1>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda molestias atque laborum 
-                    non fuga ex deserunt. Exercitationem velit ducimus praesentium, obcaecati hic voluptate id 
-                    tenetur fuga illum quidem omnis? Rerum?
-                </p>
-                <a href="#" class="main_btn">Learn More</a>
-
-            </div> -->
-
-      <div class="main_img">
-               
-      <img src="./img/banner.jpg" alt="">
-      
-      </div>
-      
+    <div class="slider">
+        <div class="list">
+            <div class="item">
+                <img src="https://sv1.vacdn.link/user_ba3f3a2b6007e47ddf8545ac17634f4f/70a6676631a0bb0f3fb3e48ec69dede0.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="https://bookish.vn/wp-content/uploads/2019/04/banner_web_khai-truong-nguyen-anh-thu_925x412.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="https://insieutoc.vn/wp-content/uploads/2021/02/mau-banner-quang-cao-khuyen-mai.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="https://insieutoc.vn/wp-content/uploads/2021/02/mau-thiet-ke-banner-dep.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="https://thaihabooks.com/wp-content/uploads/2018/09/Banner_HOI-SACH-HOANG-THANH-02-3.jpg" alt="">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
       </section>';
     }
    
@@ -125,29 +135,40 @@
 
     </nav>
 
-    <div class="main">
-
-      <!-- <div class="main_tag">
-                <h1>WELCOME TO<br><span>BOOK STORE</span></h1>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda molestias atque laborum 
-                    non fuga ex deserunt. Exercitationem velit ducimus praesentium, obcaecati hic voluptate id 
-                    tenetur fuga illum quidem omnis? Rerum?
-                </p>
-                <a href="#" class="main_btn">Learn More</a>
-
-            </div> -->
-
-      <div class="main_img">
-               
-        <img src="./img/banner.jpg" alt="">
-      </div>
-      
+    <div class="slider">
+        <div class="list">
+            <div class="item">
+                <img src="img/1.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/2.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/3.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/4.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/5.jpg" alt="">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
       </section>';
       ?>
 
-
+    <script src="../assets/js/header.js"></script>
 </body>
 
 </html>
