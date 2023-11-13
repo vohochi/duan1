@@ -34,7 +34,7 @@
     line-height: 22px;
     width: 650px;
     text-align: justify;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
   }
 
   .about .about_tag .about_btn {

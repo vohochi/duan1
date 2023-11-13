@@ -6,6 +6,7 @@ include 'view/header.php';
 include 'view/promo.php';
 include 'view/blog.php';
 include 'view/about.php';
+include 'view/new.php';
 
 if(isset($_REQUEST['page'])){
     $page = $_REQUEST['page'];
@@ -15,6 +16,8 @@ if(isset($_REQUEST['page'])){
         break;
         case 'blog';
         include 'view/blog.php';
+        case 'new';
+        include 'view/new.php';
         break;
         case 'login':
             echo "<script> window.location.href='view/login.php';</script>";

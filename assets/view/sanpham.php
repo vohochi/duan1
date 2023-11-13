@@ -1,4 +1,4 @@
-<?php 
+<?php    
 define('SVName', 'localhost');
 define("USRname", "root");
 define('DBpass', '');
@@ -12,15 +12,27 @@ define('DBName', 'duanmot');
     echo "Connection failed: " . $e->getMessage();
   }
   ?>
+
+<?php 
+// include_once 'header.php';?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../config/styles.css">
+  <link rel="stylesheet" href="../config/header.css">
+
   <title>Trang Sản Phẩm</title>
 </head>
+
 <body>
+  <?php 
+  include("header.php");
+  
+  // require("footer.php");
+  ?>
 
   <div class="wrapper">
     <div class="sidebar">
@@ -40,7 +52,7 @@ define('DBName', 'duanmot');
             echo "<li>Không có danh mục nào.</li>";
           }
         ?>
-          <?php
+        <?php
           // Thực hiện truy vấn SQL để lấy tên danh mục từ bảng danhmuc
           $queryDanhMuc = "SELECT id, name FROM danhmuc Where id = 2";
           $resultDanhMuc = $conn->query($queryDanhMuc);
@@ -107,6 +119,9 @@ define('DBName', 'duanmot');
       </div>
     </div>
   </div>
+  <?php 
 
+?>
 </body>
+
 </html>
