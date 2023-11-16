@@ -22,7 +22,7 @@
         foreach ($_SESSION['cart'] as $product) {
             
             if (isset($product['img']) && isset($product['tensp']) && isset($product['gia']) && isset($product['id'])) {                echo '<li>';
-                echo '<img src=" ' .$product['img'] . '.png" alt="'. $product['tensp'] .'" >';
+                echo '<img src=" .' .$product['img'] . '.png" alt="'. $product['tensp'] .'" >';
                 echo '<p>' . $product['tensp'] . '</p>';
                 echo '<p>Giá: ' . $product['gia'] . ' đồng</p>';
                 echo '<p>ID: ' . $product['id'] . '</p>';

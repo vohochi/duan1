@@ -93,7 +93,7 @@ define('DBName', 'duanmot');
               echo '<img src="../img/' . $row['img'] . '.png" alt="">';
               echo '<p>' . $row['name'] . '</p>';
               echo '<p>Giá: <span>' . number_format($row['price']) . ' </span> đ <span class="span"> 300000đ</span></p>';
-              echo '<input type="hidden" name="img" value="/img/' . $row['img'] . '.jpg">';
+              echo '<input type="hidden" name="img" value="/img/' . $row['img'] . '.png">';
               echo '<input type="hidden" name="tensp" value="' . $row['name'] . '">';
               echo '<input type="hidden" name="gia" value="' . $row['price'] . '">';
               echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
