@@ -17,8 +17,9 @@
 
 
     <?php
-    // $totalCount = count($_SESSION['cart']) ;
-        if(isset($_COOKIE['usr'])) {
+    session_start();
+    // $count = $_SESSION['count'];      
+      if(isset($_COOKIE['usr'])) {
            
           echo'<section>
 
@@ -52,7 +53,7 @@
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
           </svg>
-          <span class= "point"> </span>
+          <span class= "point"></span>
         </ul>
       </div>
 
@@ -95,9 +96,7 @@
 
 
     <?php
-    // session_start();
-// $count = $_SESSION['myCount']; 
-
+var_dump($_SESSION);
         if (!isset($_COOKIE['usr']))
        
          echo 
@@ -129,7 +128,7 @@
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
           </svg>
-          <span>  </span>
+          <span class="point">'.((isset($_SESSION['cart']) && !empty($_SESSION['cart'])) ? count($_SESSION['cart']) : 0 ).'</span>
         </ul>
       </div>
 
@@ -138,19 +137,19 @@
     <div class="slider">
         <div class="list">
             <div class="item">
-                <img src="img/1.jpg" alt="">
+                    <img src="https://sv1.vacdn.link/user_ba3f3a2b6007e47ddf8545ac17634f4f/70a6676631a0bb0f3fb3e48ec69dede0.jpg" alt="">
             </div>
             <div class="item">
-                <img src="img/2.jpg" alt="">
+                <img src="https://bookish.vn/wp-content/uploads/2019/04/banner_web_khai-truong-nguyen-anh-thu_925x412.jpg" alt="">
             </div>
             <div class="item">
-                <img src="img/3.jpg" alt="">
+                <img src="https://insieutoc.vn/wp-content/uploads/2021/02/mau-banner-quang-cao-khuyen-mai.jpg" alt="">
             </div>
             <div class="item">
-                <img src="img/4.jpg" alt="">
+                <img src="https://insieutoc.vn/wp-content/uploads/2021/02/mau-thiet-ke-banner-dep.jpg" alt="">
             </div>
             <div class="item">
-                <img src="img/5.jpg" alt="">
+                <img src="https://thaihabooks.com/wp-content/uploads/2018/09/Banner_HOI-SACH-HOANG-THANH-02-3.jpg" alt="">
             </div>
         </div>
         <div class="buttons">

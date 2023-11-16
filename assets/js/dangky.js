@@ -4,7 +4,6 @@ const email = document.getElementById('email');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
-
 // hien thi loi
 function showError(input, message) {
   const formgroup = input.parentElement;

@@ -11,23 +11,22 @@
 <body>
   <?php
     session_start();
-
     if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
         echo '<h1>Giỏ hàng của bạn:</h1>';
         echo '<ul>';
         $index = 0;
         $totalPrice = 0; 
-        $count = 0;
+        $count++;
         
-        // $totalCount = count($_SESSION['cart']) ;
+
         
         
         foreach ($_SESSION['cart'] as $product) {
             
             if (isset($product['img']) && isset($product['tensp']) && isset($product['gia']) && isset($product['id'])) {
-                $count++;
+  $count++;
                 echo '<li>';
-                echo '<img src=" '.$product['img'] . '.png" alt="'. $product['tensp'] .'" >';
+                echo '<img src=" ' .$product['./img'] . '.png" alt="'. $product['tensp'] .'" >';
                 echo '<p>' . $product['tensp'] . '</p>';
                 echo '<p>Giá: ' . $product['gia'] . ' đồng</p>';
                 echo '<p>ID: ' . $product['id'] . '</p>';
@@ -35,11 +34,12 @@
                 echo '</li>';
                 
                 // $_SESSION['myCount'] = $count;
-                
                 $totalPrice += $product['gia'];
                 
             }
+            // $_SESSION['count'] = $count;
             $index++;
+            echo $count;
         }
         echo '</ul>';
         
@@ -47,7 +47,6 @@
     } else {
         echo '<h1>Giỏ hàng của bạn hiện đang trống.</h1>';
     }
-    // echo '<div> '.$totalCount.'</div>'
     
 
     ?>

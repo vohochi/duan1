@@ -200,7 +200,7 @@
 
   </div>
 
-  <!-- <script src="../js/  dangky.js"></script> -->
+  <script src="../js/dangky.js"></script>
 
 </body>
 
