@@ -15,18 +15,14 @@
         echo '<h1>Giỏ hàng của bạn:</h1>';
         echo '<ul>';
         $index = 0;
-        $totalPrice = 0; 
-        $count++;
-        
+        $totalPrice = 0;         
 
         
         
         foreach ($_SESSION['cart'] as $product) {
             
-            if (isset($product['img']) && isset($product['tensp']) && isset($product['gia']) && isset($product['id'])) {
-  $count++;
-                echo '<li>';
-                echo '<img src=" ' .$product['./img'] . '.png" alt="'. $product['tensp'] .'" >';
+            if (isset($product['img']) && isset($product['tensp']) && isset($product['gia']) && isset($product['id'])) {                echo '<li>';
+                echo '<img src=" ' .$product['img'] . '.png" alt="'. $product['tensp'] .'" >';
                 echo '<p>' . $product['tensp'] . '</p>';
                 echo '<p>Giá: ' . $product['gia'] . ' đồng</p>';
                 echo '<p>ID: ' . $product['id'] . '</p>';
@@ -38,9 +34,7 @@
                 
             }
             // $_SESSION['count'] = $count;
-            $index++;
-            echo $count;
-        }
+            $index++;        }
         echo '</ul>';
         
         echo '<p class="total-price">Tổng tiền: ' . number_format($totalPrice) . ' đồng</p>';
