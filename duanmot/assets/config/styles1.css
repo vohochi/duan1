@@ -1,0 +1,169 @@
+
+.under1 {
+  display: flex;
+ align-items: center;
+}
+
+.img {
+  width: 35px;
+  height: 35px;
+  border-radius: 40px;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.menu li {
+  display: inline-block;
+  margin: 10px;
+  border: none;
+  margin-left: -20px;
+}
+.menu li a{
+color: white;
+border: none;
+margin: 10px;
+}
+.menu {
+  background-color: blue;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: #777;
+}
+
+.cart {
+  text-decoration: none;
+  color: blue;
+  font-size: 16px;
+}
+
+
+.plus{
+ display: flex;
+}
+.logo{
+  margin-right: 20%;
+  margin-left: 10px;
+}
+.connect{
+  margin-right: 20%;
+  display: flex;
+  text-align: center;
+  margin-top: 30px;
+}
+.connect p{
+  color: blue;
+  margin: 20px;
+  margin-top: 10px;
+}
+.under {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px 20px 0 0;
+}
+.search {
+
+  text-align: center;
+  margin-left: 25%;
+}
+
+form {
+  display: inline-block;
+}
+
+.search input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-right: 5px;
+  width: 200px;
+  outline: none;
+}
+
+.search input[type="submit"] {
+  padding: 10px 20px;
+  background-color: rgb(255, 255, 255); 
+  border: none;
+  border-radius: 4px;
+
+}
+
+.search input[type="submit"]:hover {
+  background-color: #208a25; 
+}
+.fa-cart-shopping {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.logout {
+  color: black;
+  display: none;
+}
+
+.logout {
+  display: block;
+  color: black;
+}
+
+.name{
+  color: blue;
+}
+
+
+
+.search1 input[type="text"] {
+  padding: 10px 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-right: 5px;
+  width: 200px;
+  outline: none;
+  color: white;
+}
+
+.search1 button[type="submit"] {
+  padding: 10px 20px;
+  background-color: blue; 
+  border: none;
+  border-radius: 4px;
+
+  color: white;
+}
+
+.search1 button[type="submit"]:hover {
+  background-color: rgb(88, 188, 255);
+}
+.search1 {
+  margin-left: 50px;
+}
+.controlprice input[type="submit"] {
+  padding: 10px 20px;
+  background-color: blue; 
+  border: none;
+  border-radius: 4px;
+
+  color: white;
+}
+
+.fa-phone{
+   display: flex;
+  color: blue;
+  font-size: 30px;
+}
+.fa-envelope{
+  color: blue;
+  font-size: 30px;
+  margin-left: 25px;
+}

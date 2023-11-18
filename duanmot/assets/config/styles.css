@@ -345,3 +345,9 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
+.allsearch{
+  display: flex;
+}
+.allsearch .controlprice{
+  margin-left: 41.5%;
+}

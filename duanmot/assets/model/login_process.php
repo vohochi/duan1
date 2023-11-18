@@ -21,9 +21,8 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
     if (loginUser($user, $password)) {
         setcookie('img', $user['img'], time() + 7200, "/");
         setcookie('usr', $user['name'], time() + 7200, '/');
-      //  header("location:../index.php");
-        header("location:../view/product_detail.php");
-        exit;
+     header("location:../index.php");
+     
     } else {
         echo "Mật khẩu hoặc tên đăng nhập sai.";
     }

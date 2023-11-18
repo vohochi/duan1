@@ -14,22 +14,38 @@ include '../model/conn.php'
   <title>Trang Sản Phẩm</title>
 </head>
 <body>
- <!-- Search Form -->
- <div class="search">
-                <form action="search.php" method="post">
-                    <input type="text" name="timkiem" placeholder="Tìm kiếm...">
+<?php
+             include "../view/menu.php";
+            ?>
+            <div class="allsearch">
+                <div class="search1">
+     <form action="search.php" method="get">
+    <input type="text" name="timkiem" placeholder="Tìm kiếm sản phẩm...">
+    <button type="submit">Tìm kiếm</button>
+      </form>
 
-                   <input type="submit" name="timkiem" value="Tìm Kiếm">
-                </form>
-            </div>
+                </div>
+                <div class="controlprice">
+    <form action="searchprice.php" method="GET">
+        <label for="filterPrice">Chọn giá:</label>
+        <input type="range" id="filterPrice" name="filterPrice" min="20000" max="500000" step="10" oninput="updateFilterPriceValue(this.value)">
+        <span id="filterPriceValue">0</span>đ
+        <input type="submit" name="timkiem" value="Tìm Kiếm">
+    </form>
+</div>
 
+<script>
+    function updateFilterPriceValue(value) {
+        document.getElementById('filterPriceValue').textContent = value;
+    }
+</script>
+</form>
+</div>
   <div class="wrapper">
     <div class="sidebar">
-      <!-- Danh mục và sản phẩm hot bên trái -->
       <h2>Danh Mục</h2>
       <ul>
         <?php
-          // Thực hiện truy vấn SQL để lấy tên danh mục từ bảng danhmuc
           $queryDanhMuc = "SELECT id, name FROM danhmuc Where id = 1";
           $resultDanhMuc = $conn->query($queryDanhMuc);
 
@@ -42,7 +58,6 @@ include '../model/conn.php'
           }
         ?>
           <?php
-          // Thực hiện truy vấn SQL để lấy tên danh mục từ bảng danhmuc
           $queryDanhMuc = "SELECT id, name FROM danhmuc Where id = 2";
           $resultDanhMuc = $conn->query($queryDanhMuc);
 
@@ -55,7 +70,6 @@ include '../model/conn.php'
           }
         ?>
          <?php
-          // Thực hiện truy vấn SQL để lấy tên danh mục từ bảng danhmuc
           $queryDanhMuc = "SELECT id, name FROM danhmuc Where id = 3";
           $resultDanhMuc = $conn->query($queryDanhMuc);
 
@@ -121,12 +135,10 @@ try {
    echo "Connection failed: " . $e->getMessage();
  }
    // Thực hiện truy vấn SQL để lấy toàn bộ sản phẩm
-   $query = "SELECT id, name, price, img FROM product LIMIT 4";
+   $query = "SELECT id, name, price, img FROM product WHERE MaDanhMuc= 1";
    $result = $conn->query($query);
-
-   echo '<div class="container">';
-
    echo '<h2>Danh Sách truyện tranh</h2>';
+   echo '<div class="container">';
    if ($result->rowCount() > 0) {
      while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
        echo '<div class="boxsp">';
@@ -150,14 +162,44 @@ try {
  ?>
 
       </div>
+<div class="product">
+      <?php
 
-      <div class="product">
-        <img src="product2.jpg" alt="Sản Phẩm 2">
-        <h3>Tên Sản Phẩm 2</h3>
-        <p>Giá: $75</p>
-        <button class="addToCart">Thêm vào giỏ hàng</button>
-        <a href="#" class="productDetails">Chi tiết sản phẩm</a>
-      </div>
+// Sản phẩm chính 
+$query = "SELECT id, name, price, img FROM product LIMIT 4";
+$result = $conn->query($query);
+
+echo '<h2>Sản phẩm mới</h2>';
+echo '<div class="container">';
+
+if ($result->rowCount() > 0) {
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        echo '<div class="boxsp">';
+        echo '<form action="add_to_cart.php" method="post">';
+        echo '<input type="hidden" name="img" value="' . $row['img'] . '">';
+        echo '<input type="hidden" name="tensp" value="' . $row['name'] . '">';
+        echo '<input type="hidden" name="gia" value="' . $row['price'] . '">';
+        echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+        echo '<a href="product_detail.php?id=' . $row['id'] . '"><img src="../img/' . $row['img'] . '" alt=""></a>';
+        echo '<p>' . $row['name'] . '</p>';
+        echo '<p>Giá: <span>' . number_format($row['price']) . ' </span> đ <span class="span"> 300000đ</span></p>';
+        echo '<input type="submit" name="dathang" value="Thêm vào giỏ hàng">';
+        echo '</form>';
+        echo '</div>';
+    };
+
+    echo '<div class="pagination">';
+    
+    echo '</div>';
+} else {
+    echo "Không có sản phẩm nào.";
+}
+
+echo '</div>';
+
+?>
+</div>
+  </div>
     </div>
   </div>
 

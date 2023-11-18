@@ -7,7 +7,6 @@ if (isset($_POST['dathang']) && $_POST['dathang'] == 'Thêm vào giỏ hàng') {
     $tensp = $_POST['tensp'];
     $gia = $_POST['gia'];
     $id = $_POST['id'];
-
     if (!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = array();
     }
@@ -19,8 +18,6 @@ if (isset($_POST['dathang']) && $_POST['dathang'] == 'Thêm vào giỏ hàng') {
     );
 
     $_SESSION['cart'][] = $sp;
-
-
     header("location:../view/viewcart.php");
     exit();
 }

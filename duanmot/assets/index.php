@@ -3,7 +3,6 @@
 include 'model/conn.php';
 include 'view/header.php';
 include 'view/promo.php';
-include 'view/%C4%91.php';
 
 if(isset($_REQUEST['page'])){
     $page = $_REQUEST['page'];
@@ -21,7 +20,7 @@ if(isset($_REQUEST['page'])){
         
             
     default:
-        include 'view/blog.php';
+ 
         break;
     }
 } else 
