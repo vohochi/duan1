@@ -37,9 +37,9 @@
     </div>
     <div class="menu">
     <ul>
-    <li class="active"><a href="../index.php">Home</a></li>
-    <li><a href="index.php?page=about">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li class="active"><a href="../index.php">Trang chủ</a></li>
+    <li><a href="index.php?page=about">Thông tin</a></li>
+    <li><a href="contact.html">Liên hệ</a></li>
     <li><a href="sanpham.php">Sản phẩm</a></li>
     <li><a href="viewcart.php" class="">Giỏ hàng </a></li>
     <li><a href="admin_dashboard.php">Trang admin </a></li>

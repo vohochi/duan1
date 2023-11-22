@@ -217,8 +217,7 @@ table {
   text-align: center;
 }
 
-th, td {
-  border: 1px solid #dddddd;
+th, td {border: 1px solid #dddddd;
   text-align: center;
   padding: 8px;
 }
@@ -227,11 +226,11 @@ th {
   background-color: #f2f2f2;
 }
 
-img {
+/* img {
   max-width: 100px;
   max-height: 100px;
   transition: transform 0.3s;
-}
+} */
 .img-sp{
   max-width: 150px;
   max-height: 150px;
@@ -296,7 +295,7 @@ nav a:hover {
 
 .box {
   border: 1px solid #ddd;
-  width: 300px; 
+  width: 350px; 
   height: auto;
   background-color: #fff;
   text-align: center;
@@ -350,4 +349,116 @@ nav a:hover {
 }
 .allsearch .controlprice{
   margin-left: 41.5%;
+}
+
+.body{
+  margin: 0;
+  padding: 0;
+}
+
+.container2{
+  display: flex;
+  height: 75vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #007bff; */
+}
+.container2>.product-details1{
+  height: 70vh;
+  width: 70vw;
+ background-color: #EAEAEA;
+ display: flex;
+}
+
+.conten{
+  width: 60%;
+}
+
+.image-details1{
+width: 40%;
+height: 100vh;
+}
+.image-details1>.image{
+  height: 500px;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-details{
+  font-size: 40px;
+  color: #323C3F;
+  margin: 10px auto;
+  margin-left: 20px;
+}
+
+.price-details{
+  font-size: 25px;
+  font-weight: bold;
+  color: #089DA1;
+  padding-right: 170px;
+}
+
+.mota-details{
+  border: 1px solid rgb(180, 167, 167);
+  margin-left: 140px;
+  height: auto;
+  margin-right: 100px;
+}
+
+.btn-details{
+  text-align: center;
+  padding-top: 50px;
+  margin-left: 100px;
+}
+
+.btn-add{
+  margin-top: 30px;
+  width: 150px;
+  margin-left: 10px;
+  height: 40px;
+  background: blue;
+  outline: none;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-buy{
+  margin-top: 30px;
+  width: 150px;
+  height: 40px;
+  background: blue;
+  outline: none;
+  color: white;
+  border: none;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+.fa-solid.fa-share{
+  color: blue;
+  font-size: 30px;
+  margin-left: 20px;
+  margin-left: 50px;
+  padding-top: 20px;
+}
+
+
+.btn-add:hover{
+  color: blue;
+  background: white;
+  transition: 0.4s;
+}
+
+.btn-buy:hover{
+  color: blue;
+  background: white;
+  transition: 0.4s;
+}
+
+.fa-solid.fa-share:hover{
+  color: white;
+  transition: 0.2s;
 }
