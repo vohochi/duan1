@@ -19,10 +19,11 @@
 
 
   #bankOptions div:hover {
-    background-color: yellow;
+    background-color: orange;
+    color: white;
   }
 
-  option {
+  #bankOptions option {
 
     height: 10px;
     width: auto;
@@ -41,12 +42,39 @@
     display: inline;
     width: auto;
     height: 30px;
+
   }
 
   .nameBank {
     position: absolute;
   }
 
+
+  #optionDistrict,
+  #optionVillage,
+  #optionCity {
+    overflow: auto;
+    width: 100%;
+    height: 80px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    box-shadow: 3px 5px 1px 1px rgb(0, 0, 0, 2px);
+    /* display: none; */
+  }
+
+  #bankOptions div option {
+    text-align: center;
+    position: absolute;
+    left: 30%;
+
+  }
+
+  #optionDistrict option:hover,
+  #optionVillage option:hover,
+  #optionCity option:hover {
+    background-color: orange;
+    color: white;
+  }
 
   /* 
   #bankOptions:active {
@@ -78,19 +106,22 @@
 
           <div class="inputBox">
             <span>Địa chỉ chi tiết:</span>
-            <input type="text" placeholder="kubin">
+            <input id="addressDetail" type="text" placeholder="kubin">
           </div>
           <div class="inputBox">
             <span>Xã :</span>
-            <input type="email" placeholder="example@example.com">
+            <input id="district" type="text" placeholder="eahu....">
+            <div id="optionDistrict"></div>
           </div>
           <div class="inputBox">
             <span>Huyện :</span>
-            <input type="text" placeholder="Địa chỉ đường">
+            <input id="village" type="text" placeholder="Cukuin...">
+            <div id="optionVillage"></div>
           </div>
           <div class="inputBox">
             <span>Thành phố :</span>
-            <input type="text" placeholder="mumbai">
+            <input id="city" type="text" placeholder="mumbai">
+            <div id="optionCity"></div>
           </div>
 
           <div class="flex">
@@ -100,7 +131,7 @@
             </div>
             <div class="inputBox">
               <span>zip code :</span>
-              <input type="text" placeholder="123 456">
+              <input id="zipCode" type="text" placeholder="123 456">
             </div>
           </div>
 
