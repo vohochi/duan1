@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .image-container {
+      position: relative;
+    }
+
+    .slide-up-down {
+
+      animation: slideUpDown 6s infinite alternate; 
+    }
+
+    @keyframes slideUpDown {
+      0% {
+        transform: translateX(0%);
+      }
+      25% {
+        transform: translateX(50%);
+
+      }
+      50% {
+        transform: translateX(100%);
+
+      }
+      75% {
+        transform: translateX(50%);
+
+      }
+      100% {
+        transform: translateX(0%);
+
+      }
+      
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-container">
+    <img class="slide-up-down" src="../img/26.png" alt="Your Image">
+  </div>
+
+</body>
+</html>

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="config/styles1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="stylesheet" href="config/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="view/cart.js"></script>
 </head>
 <body>
     <div class="header">
@@ -18,7 +20,7 @@
     <?php
     if (isset($_COOKIE['usr'])) {
         echo'<div class="under">';
-        echo '<p><a href="index.php?page=logout" class="login">logout</a></p>';
+        echo '<p><a href="model/logout.php" class="logout">logout</a></p>';
         echo '<img class="img" src="img/' . $_COOKIE['img'] . '.png">';
         echo '<p class="name">' . $_COOKIE['usr'] . '</p>';
         echo '</div>';

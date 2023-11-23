@@ -11,5 +11,5 @@ if (isset($_COOKIE['usr'])) {
    setcookie('usr', '', time() -1, '/');
    setcookie('img', '', time() -1, '/');
 }
-header('location:../index.php');
+header('location:  ../index.php');
 ?>

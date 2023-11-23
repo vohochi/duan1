@@ -3,10 +3,13 @@
 
 <head>
     <title>Register Page</title>
-    <link rel="stylesheet" href="../config/styles.css">
+    <link rel="stylesheet" href="../config/styl.es.css">
 </head>
 
 <body>
+<div id="container">
+        <div class="snow"></div>
+        <div class="imge"> <img class="slide-up-down" src="../img/44-removebg-preview.png" alt="Your Image"></div>
     <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="card">

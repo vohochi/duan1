@@ -1,31 +1,30 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="../assets/css/login.css">
+<html lang="en">
 <head>
-    <title>Login Page</title>
-    <!--Made with love by Mutiullah Samim -->
-
-    <!--Bootsrap 4 CDN-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <!--Fontawesome CDN-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-    <!--Custom styles-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/login.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="../config/styles3.css">
 </head>
-
 <body>
-    <div class="container">
+    <div id="container">
+        <div class="snow"></div>
+        <div class="imge"> <img class="slide-up-down" src="../img/44-removebg-preview.png" alt="Your Image"></div>
         <div class="d-flex justify-content-center h-100">
             <div class="card">
                 <div class="card-header">
-                    <h3>Sign In</h3>
+                    <p>Sign In</p>
+                    <?php
+if (isset($error_message)) {
+    echo "<p style='color: red;'>$error_message</p>";
+}
+?>
                     <div class="d-flex justify-content-end social_icon">
                         <span><i class="fab fa-facebook-square"></i></span>
                         <span><i class="fab fa-google-plus-square"></i></span>
@@ -63,12 +62,36 @@
                         <a href="forgotpass.php">Forgot your password?</a>
                     </div>
                 </div>
-            </div>
+         
         </div>
+        <div class="img"><img src="../img/23-removebg-preview.png" alt=""></div>
+    </div>
+   
+        <div class="snow"></div>
     </div>
     <form action="../model/login_process.php" method="post">
     <!-- Các trường và nút đăng nhập ở đây -->
-</form>
+</form> 
+<script>
+    let container = document.getElementById('container');
+let count = 400;
+for(var i = 0; i<count; i++){
+    let leftSnow = Math.floor(Math.random() * container.clientWidth);
+    let topSnow = Math.floor(Math.random() * container.clientHeight);
+    let widthSnow = Math.floor(Math.random() * 50);
+    let timeSnow = Math.floor((Math.random() * 5) + 5);
+    let blurSnow = Math.floor(Math.random() * 10);
+    console.log(leftSnow);
+    let div = document.createElement('div');
+    div.classList.add('snow');
+    div.style.left = leftSnow + 'px';
+    div.style.top = topSnow + 'px';
+    div.style.width = widthSnow + 'px';
+    div.style.height = widthSnow + 'px';
+    div.style.animationDuration = timeSnow + 's';
+    div.style.filter = "blur(" + blurSnow + "px)";
+    container.appendChild(div);
+}
+</script>
 </body>
-
 </html>

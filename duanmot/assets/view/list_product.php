@@ -30,66 +30,8 @@ $conn = null;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List of Products</title>
     <link rel="stylesheet" href="../config/styles.css">
-    <style>
 
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    text-align: center;
-}
-
-header {
-   
-    padding: 10px;
-    text-align: center;
-}
-
-
-.img-sp{
-    height: 150px;
-    width: 150px;
-}
-header a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-header a:hover {
-    text-decoration: underline;
-}
-
-.bang {
-    width: 70%;
-    margin: 20px auto; /* Center the table */
-    border-collapse: collapse;
-}
-
-.bang th, .bang td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-    text-align: center;
-}
-
-.bang th {
-    background-color: #3498db;
-    color: #fff;
-}
-
-.bang tr:hover {
-    background-color: #f5f5f5;
-}
-
-/* Additional styles as needed */
-.bang>tr>td>img{
-    height: 150px;
-    width: auto;
-}
-    </style>
 </head>
 <body>
 
@@ -126,7 +68,7 @@ header a:hover {
                 </td>
                 <td><?php echo $product['MaDanhMuc']; ?></td>
                 <td><?php echo $product['MoTa']; ?></td>
-                <td><a href='../model/edit_product.php?id=<?php echo $product['ID']; ?>'>Sửa</a></td>
+                <td><a href='../view/edit_product.php?id=<?php echo $product['ID']; ?>'>Sửa</a></td>
                 <td><a href='../model/delete_product.php?id=<?php echo $product['ID']; ?>'>Xóa</a></td>
             </tr>
         <?php endforeach; ?>

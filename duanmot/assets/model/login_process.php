@@ -24,9 +24,10 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
      header("location:../index.php");
      
     } else {
-        echo "Mật khẩu hoặc tên đăng nhập sai.";
+        $error_message = "error name or pass";
+        header("location:../view/login.php");
     }
 } else {
-    echo "Please provide a valid username and password.";
+    echo "Please provide ";
 }
 ?>

@@ -14,7 +14,7 @@ echo '<div class="container">';
 if ($result->rowCount() > 0) {
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         echo '<div class="boxsp">';
-        echo '<form action="add_to_cart.php" method="post">';
+        echo '<form action="view/add_to_cart.php" method="post">';
         echo '<input type="hidden" name="img" value="' . $row['img'] . '">';
         echo '<input type="hidden" name="tensp" value="' . $row['name'] . '">';
         echo '<input type="hidden" name="gia" value="' . $row['price'] . '">';

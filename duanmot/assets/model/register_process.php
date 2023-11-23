@@ -1,15 +1,17 @@
 <?php
 include 'conn.php';
 
-if (!empty($_POST['name']) && !empty($_POST['usr']) && !empty($_POST['pwd']) && !empty($_FILES['file'])) {
+if (!empty($_POST['name']) && !empty($_POST['usr'])&& !empty($_POST['email'])  && !empty($_POST['pwd']) && !empty($_FILES['file'])) {
     $name = $_POST['name'];
+    $email =$_POST['email'];
     $pwd = $_POST['pwd'];
     $usr = $_POST['usr'];
     $confirm_password = $_POST["cfm"];
     $passhash = password_hash($confirm_password,PASSWORD_DEFAULT);
     $img = basename($_FILES['file']['name'], ".png");
-    $stmt = $conn->prepare("INSERT INTO user VALUE(?,?,?,?)");
+    $stmt = $conn->prepare("INSERT INTO user VALUE(?,?,?,?,?)");
     $stmt->bindParam(1, $usr);
+    $stmt->bindParam(5, $email);
     $stmt->bindParam(2, $passhash);
     $stmt->bindParam(3, $name);
     $stmt->bindParam(4, $img);

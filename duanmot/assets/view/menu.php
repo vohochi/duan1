@@ -44,7 +44,7 @@
     <li><a href="viewcart.php" class="">Giỏ hàng </a></li>
     <li><a href="admin_dashboard.php">Trang admin </a></li>
     <div class="search">
-                <form action="search.php" method="post">
+                <form action="search.php" method="get">
                     <input type="text" name="timkiem" placeholder="Tìm kiếm...">
 
                    <input type="submit" name="timkiem" value="Tìm Kiếm">
@@ -53,6 +53,5 @@
     </ul>
 </div>
 </div>
-   
 </body>
 </html>

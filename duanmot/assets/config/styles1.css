@@ -92,7 +92,7 @@ form {
 
 .search input[type="submit"] {
   padding: 10px 20px;
-  background-color: rgb(255, 255, 255); 
+  background-color: rgb(182, 34, 34);
   border: none;
   border-radius: 4px;
 
@@ -130,7 +130,7 @@ form {
   margin-right: 5px;
   width: 200px;
   outline: none;
-  color: white;
+  color: blue;
 }
 
 .search1 button[type="submit"] {
