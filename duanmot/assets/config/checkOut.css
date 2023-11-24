@@ -79,10 +79,16 @@ color: rgb(7, 189, 37);
   margin-top: 5px;
 }
 
+#fee {
+  color: rgb(231, 0, 0)
+}
 .container form .row .col .inputBox img {
   height: 34px;
   margin-top: 5px;
   filter: drop-shadow(0 0 1px #000);
+}
+.delivery {
+  color: rgb(255, 153, 0);
 }
 
 .container form .submit-btn {

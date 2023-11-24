@@ -77,11 +77,14 @@
     color: white;
   }
 
+
+
   /* 
   #bankOptions:active {
     background-color: ;
 
   } */
+
 
   #bankOptions {
     cursor: pointer;
@@ -95,6 +98,7 @@
     display: none;
   }
   </style>
+  <div id="success"></div>
   <div class="container">
 
     <form action="" id="container">
@@ -104,35 +108,35 @@
         <div class="col">
 
           <h3 class="title">Địa chỉ thanh toán</h3>
-
           <div class="inputBox">
-            <span>Địa chỉ chi tiết:</span>
-            <input id="addressDetail" type="text" placeholder="112/11 Hoàng hóa thám TX...">
-          </div>
-          <div class="inputBox">
-            <span>Xã :</span>
-            <input id="district" type="text" placeholder="eahu....">
-            <div id="optionDistrict"></div>
+            <span>Thành phố, tỉnh :</span>
+            <input id="city" required type="text" placeholder="HCM">
+            <div id="optionCity"></div>
           </div>
           <div class="inputBox">
             <span>Quận, huyện :</span>
-            <input id="village" type="text" placeholder="Cukuin...">
+            <input id="village" required type="text" placeholder="Cukuin...">
             <div id="optionVillage"></div>
           </div>
+
           <div class="inputBox">
-            <span>Thành phố, tỉnh :</span>
-            <input id="city" type="text" placeholder="HCM">
-            <div id="optionCity"></div>
+            <span>Xã :</span>
+            <input id="district" required type="text" placeholder="eahu....">
+            <div id="optionDistrict"></div>
+          </div>
+          <div class="inputBox">
+            <span>Địa chỉ chi tiết:</span>
+            <input id="addressDetail" required type="text" placeholder="112/11 Hoàng hóa thám TX...">
           </div>
 
           <div class="flex">
             <div class="inputBox">
               <span>state :</span>
-              <input id="state" type="text" placeholder="state">
+              <input id="state" required type="text" placeholder="state">
             </div>
             <div class="inputBox">
               <span>zip code :</span>
-              <input id="zipCode" type="text" placeholder="123 456">
+              <input id="zipCode" required type="text" placeholder="123 456">
             </div>
           </div>
 
@@ -148,18 +152,18 @@
           </div>
           <div class="inputBox" id="scroll">
             <span>Lựa chọn ngân hàng :</span>
-            <input type="text" list="bankOptions" id="input" class="scrollbar" placeholder="Sacombank...">
+            <input type="text" list="bankOptions" required id="input" class="scrollbar" placeholder="Sacombank...">
             <span class="nameBank"></span>
             <div id="bankOptions"></div>
           </div>
           <div class="inputBox">
             <span>Số thẻ :</span>
-            <input type="number" id="bin" placeholder="1111-2222-3333-4444">
+            <input type="number" required id="bin" placeholder="1111-2222-3333-4444">
             <div class="bin"></div>
           </div>
           <div class="inputBox">
             <span>Tên của chủ thẻ:</span>
-            <input id="nameCard" type="text" placeholder="BaoNguyen">
+            <input id="nameCard" required type="text" placeholder="BaoNguyen">
           </div>
 
           <div class="flex">
@@ -176,8 +180,12 @@
 
       </div>
 
-      <input type="submit" value="proceed to checkout" class="submit-btn">
+      <div id="delivery" class="delivery">Phí vận chuyển:
+        <div id="fee">
 
+        </div>
+      </div>
+      <input type="submit" value="Tiến hành thanh toán" class="submit-btn">
     </form>
 
 

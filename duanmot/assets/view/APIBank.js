@@ -13,6 +13,7 @@ const state = document.getElementById('state');
 const nameCard = document.getElementById('nameCard');
 const ccv = document.getElementById('ccv');
 const exp = document.getElementById('exp');
+const delivery = document.getElementById('delivery');
 
 // const res = await fetch('https://provinces.open-api.vn/api/');
 const showData = async function (e) {
@@ -62,9 +63,9 @@ const showData = async function (e) {
   }
 };
 const showCity = async function getLocationData() {
+  const res = await fetch('https://provinces.open-api.vn/api/?depth=3');
+  const results = await res.json();
   try {
-    const res = await fetch('https://provinces.open-api.vn/api/?depth=3');
-    const results = await res.json();
     results.forEach((information) => {
       const optionCity = document.getElementById('optionCity');
       const optionVillage = document.getElementById('optionVillage');
@@ -73,8 +74,16 @@ const showCity = async function getLocationData() {
       option.textContent = information.name;
       optionCity.appendChild(option);
       option.addEventListener('click', function (choose) {
+        // const chosenCity = results.find((c) => {
+        //   console.log(c);
+        //   c.name === choose.target.textContent;
+        // });
         city.value = choose.target.textContent;
+        const fee = document.getElementById('fee');
         zipCode.value = information.phone_code;
+        const random = Math.floor(Math.random() * (40000 - 10000 + 1)) + 10000;
+        // const random1 = random.toString().split().splice(3, 0, '.').join();
+        fee.textContent = `${random} VNĐ`;
         optionCity.style.display = 'none';
         state.value = 'Việt Nam';
       });
@@ -84,10 +93,9 @@ const showCity = async function getLocationData() {
   }
 };
 const showVillage = async function () {
+  const res = await fetch('https://provinces.open-api.vn/api/?depth=3');
+  const results = await res.json();
   try {
-    const res = await fetch('https://provinces.open-api.vn/api/?depth=3');
-    const results = await res.json();
-
     results.forEach((information) => {
       const optionVillage = document.getElementById('optionVillage');
       let option = document.createElement('option');
@@ -106,9 +114,9 @@ const showVillage = async function () {
   }
 };
 const showDistrict = async function () {
+  const res = await fetch('https://provinces.open-api.vn/api/?depth=3');
+  const results = await res.json();
   try {
-    const res = await fetch('https://provinces.open-api.vn/api/?depth=3');
-    const results = await res.json();
     // console.log(results);
 
     results.forEach((information) => {
