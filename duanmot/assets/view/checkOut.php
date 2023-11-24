@@ -23,6 +23,7 @@
     color: white;
   }
 
+
   #bankOptions option {
 
     height: 10px;
@@ -59,7 +60,7 @@
     border: 1px solid #ccc;
     cursor: pointer;
     box-shadow: 3px 5px 1px 1px rgb(0, 0, 0, 2px);
-    /* display: none; */
+    display: none;
   }
 
   #bankOptions div option {
@@ -91,7 +92,7 @@
     background-color: #e9e9e9;
     position: absolute;
     left: 0;
-    /* display: none; */
+    display: none;
   }
   </style>
   <div class="container">
@@ -106,7 +107,7 @@
 
           <div class="inputBox">
             <span>Địa chỉ chi tiết:</span>
-            <input id="addressDetail" type="text" placeholder="kubin">
+            <input id="addressDetail" type="text" placeholder="112/11 Hoàng hóa thám TX...">
           </div>
           <div class="inputBox">
             <span>Xã :</span>
@@ -114,20 +115,20 @@
             <div id="optionDistrict"></div>
           </div>
           <div class="inputBox">
-            <span>Huyện :</span>
+            <span>Quận, huyện :</span>
             <input id="village" type="text" placeholder="Cukuin...">
             <div id="optionVillage"></div>
           </div>
           <div class="inputBox">
-            <span>Thành phố :</span>
-            <input id="city" type="text" placeholder="mumbai">
+            <span>Thành phố, tỉnh :</span>
+            <input id="city" type="text" placeholder="HCM">
             <div id="optionCity"></div>
           </div>
 
           <div class="flex">
             <div class="inputBox">
               <span>state :</span>
-              <input id="state" type="text" placeholder="india">
+              <input id="state" type="text" placeholder="state">
             </div>
             <div class="inputBox">
               <span>zip code :</span>
@@ -157,18 +158,18 @@
             <div class="bin"></div>
           </div>
           <div class="inputBox">
-            <span>exp month :</span>
-            <input type="text" placeholder="january">
+            <span>Tên của chủ thẻ:</span>
+            <input id="nameCard" type="text" placeholder="BaoNguyen">
           </div>
 
           <div class="flex">
             <div class="inputBox">
               <span>exp year :</span>
-              <input type="number" placeholder="2022">
+              <input class="exp" id="exp" type="number" placeholder="2022">
             </div>
             <div class="inputBox">
               <span>CVV :</span>
-              <input type="text" placeholder="1234">
+              <input class="ccv" id="ccv" type="text" placeholder="1234">
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 'use strict';
-// https://provinces.open-api.vn/api/?depth=2
+// https://provinces.open-api.vn/api/?depth=3
 const container = document.getElementById('container');
 const bankSelect = document.getElementById('bankOptions');
 const input = document.getElementById('input');
@@ -9,6 +9,10 @@ const village = document.getElementById('village');
 const district = document.getElementById('district');
 const addressDetail = document.getElementById('addressDetail');
 const zipCode = document.getElementById('zipCode');
+const state = document.getElementById('state');
+const nameCard = document.getElementById('nameCard');
+const ccv = document.getElementById('ccv');
+const exp = document.getElementById('exp');
 
 // const res = await fetch('https://provinces.open-api.vn/api/');
 const showData = async function (e) {
@@ -38,6 +42,19 @@ const showData = async function (e) {
         input.value = `${nameShort} ${name}`;
         bin.value = bank.bin;
         bankSelect.style.display = 'none';
+        bin.addEventListener('keyup', function (e) {
+          // Kiểm tra xem input có chứa 10 số hay không
+          if (e.target.value.split('').length === 16) {
+            // Kích hoạt sự kiện
+            nameCard.value = 'Võ Hồ Chí';
+            ccv.value = 826;
+            exp.value = 2028;
+            console.log('Đã nhập đủ 10 số');
+          } else console.log('chưa đủ');
+        });
+        // if (bin.value === '9704230123456789') {
+        //   nameCard.value = 'Võ Hồ Chí';
+        // }
       });
     });
   } catch (error) {
@@ -46,21 +63,20 @@ const showData = async function (e) {
 };
 const showCity = async function getLocationData() {
   try {
-    const res = await fetch('https://provinces.open-api.vn/api/?depth=2');
+    const res = await fetch('https://provinces.open-api.vn/api/?depth=3');
     const results = await res.json();
     results.forEach((information) => {
       const optionCity = document.getElementById('optionCity');
       const optionVillage = document.getElementById('optionVillage');
       let option = document.createElement('option');
       // zipCode = information.name;
-
       option.textContent = information.name;
       optionCity.appendChild(option);
       option.addEventListener('click', function (choose) {
         city.value = choose.target.textContent;
         zipCode.value = information.phone_code;
         optionCity.style.display = 'none';
-        // city.value = `${choose.textContent}`;
+        state.value = 'Việt Nam';
       });
     });
   } catch (error) {
@@ -69,22 +85,19 @@ const showCity = async function getLocationData() {
 };
 const showVillage = async function () {
   try {
-    const res = await fetch('https://provinces.open-api.vn/api/?depth=2');
+    const res = await fetch('https://provinces.open-api.vn/api/?depth=3');
     const results = await res.json();
-    console.log(results);
 
     results.forEach((information) => {
-      // console.log(information);
       const optionVillage = document.getElementById('optionVillage');
       let option = document.createElement('option');
+      optionVillage.appendChild(option);
       information.districts.forEach((e) => {
-        option.textContent = information.name;
-        optionVillage.appendChild(option);
+        option.textContent = e.name;
+        const villageApi = e.name;
         option.addEventListener('click', function (choose) {
-          choose.preventDefault();
-          village.value = choose.target.textContent;
+          village.value = e.name;
           optionVillage.style.display = 'none';
-          // city.value = `${choose.textContent}`;
         });
       });
     });
@@ -94,19 +107,23 @@ const showVillage = async function () {
 };
 const showDistrict = async function () {
   try {
-    const res = await fetch('https://provinces.open-api.vn/api/');
+    const res = await fetch('https://provinces.open-api.vn/api/?depth=3');
     const results = await res.json();
     // console.log(results);
 
     results.forEach((information) => {
       const optionDistrict = document.getElementById('optionDistrict');
       let option = document.createElement('option');
-      option.textContent = information.name;
       optionDistrict.appendChild(option);
-      option.addEventListener('click', function (choose) {
-        choose.preventDefault();
-        district.value = choose.target.textContent;
-        optionDistrict.style.display = 'none';
+      information.districts.map((item1) => {
+        return item1.wards.filter((item2) => {
+          // code here
+          option.textContent = item2.name;
+          option.addEventListener('click', function (choose) {
+            district.value = choose.target.textContent;
+            optionDistrict.style.display = 'none';
+          });
+        });
       });
     });
   } catch (error) {
@@ -115,25 +132,25 @@ const showDistrict = async function () {
 };
 
 Promise.all([showCity(), showData(), showVillage(), showDistrict()]);
-const focus = function () {
+
+// event
+input.addEventListener('focus', function () {
   // Hiển thị
   bankOptions.style.display = 'block';
-};
-const blur = function () {
-  // Ẩn
-  bankOptions.style.display = 'none';
-};
-// event
-// inputElements.forEach(function () {
-//   inputElement.addEventListener('focus', handleFocus);
-// });
-const inputElements = [input, city, village, district];
-inputElements.forEach((element) => {
-  element.addEventListener('focus', focus);
 });
-inputElements.forEach((element) => {
-  element.addEventListener('blur', blur);
+city.addEventListener('focus', function () {
+  // Hiển thị
+  optionCity.style.display = 'block';
 });
+village.addEventListener('focus', function () {
+  // Hiển thị
+  optionVillage.style.display = 'block';
+});
+district.addEventListener('focus', function () {
+  // Hiển thị
+  optionDistrict.style.display = 'block';
+});
+
 // geolocation
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
