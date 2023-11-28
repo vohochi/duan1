@@ -8,6 +8,8 @@
 
   <!-- custom css file link  -->
   <link rel="stylesheet" href="../config/checkOut.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
 
@@ -77,6 +79,9 @@
     color: white;
   }
 
+  #delivery .img {
+    display: inline-block;
+  }
 
 
   /* 
@@ -89,7 +94,7 @@
   #bankOptions {
     cursor: pointer;
     overflow: auto;
-    height: 200px;
+    height: 210px;
     box-shadow: 3px 5px 1px 1px rgb(0, 0, 0, 2px);
     width: 100%;
     background-color: #e9e9e9;
@@ -143,12 +148,32 @@
         </div>
 
         <div class="col">
-
-          <h3 class="title">Thanh toán</h3>
+          <h3 class="title">
+            Thanh toán <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+              class="bi bi-bank" viewBox="0 0 16 16">
+              <path
+                d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89zM3.777 3h8.447L8 1zM2 6v7h1V6zm2 0v7h2.5V6zm3.5 0v7h1V6zm2 0v7H12V6zM13 6v7h1V6zm2-1V4H1v1zm-.39 9H1.39l-.25 1h13.72l-.25-1Z" />
+            </svg></h3>
 
           <div class="inputBox">
             <span>Thẻ được chấp nhận :</span>
             <img src="../img/card_img.png" alt="">
+          </div>
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+              <label class="form-check-label" for="credit">Credit card</label>
+            </div>
+            <div class="form-check">
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required=""
+                data-listener-added_3dd7a052="true">
+              <label class="form-check-label" for="debit">Debit card</label>
+            </div>
+            <div class="form-check">
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required=""
+                data-listener-added_3dd7a052="true">
+              <label class="form-check-label" for="paypal">PayPal</label>
+            </div>
           </div>
           <div class="inputBox" id="scroll">
             <span>Lựa chọn ngân hàng :</span>
@@ -158,7 +183,7 @@
           </div>
           <div class="inputBox">
             <span>Số thẻ :</span>
-            <input type="number" required id="bin" placeholder="1111-2222-3333-4444">
+            <input maxlength="16" type="text" required id="bin" placeholder="1111-2222-3333-4444">
             <div class="bin"></div>
           </div>
           <div class="inputBox">
@@ -181,15 +206,25 @@
       </div>
 
       <div id="delivery" class="delivery">Phí vận chuyển:
-        <div id="fee">
-
-        </div>
       </div>
-      <input type="submit" value="Tiến hành thanh toán" class="submit-btn">
+      <div class="icon"> <img src="../img/delivery-truck.png" alt=""></div>
+      <div id="fee">
+      </div>
+
+      <input type="submit" id="submit" value="Tiến hành thanh toán" class="submit-btn">
     </form>
 
 
   </div>
+  <!-- <div class="success">
+    <div class="process">
+      <h2>Đơn hàng của bạn đang được xử lý</h2>
+      <div class="loading">
+        <img class="spin" src="../img/loading.png" alt="">
+
+      </div>
+    </div>
+  </div> -->
 
   <script defer src="APIBank.js"></script>
 

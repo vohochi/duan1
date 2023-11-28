@@ -14,6 +14,9 @@ const nameCard = document.getElementById('nameCard');
 const ccv = document.getElementById('ccv');
 const exp = document.getElementById('exp');
 const delivery = document.getElementById('delivery');
+const submit = document.getElementById('submit');
+const success = document.getElementsByClassName('success');
+console.log(success);
 
 // const res = await fetch('https://provinces.open-api.vn/api/');
 const showData = async function (e) {
@@ -82,8 +85,10 @@ const showCity = async function getLocationData() {
         const fee = document.getElementById('fee');
         zipCode.value = information.phone_code;
         const random = Math.floor(Math.random() * (40000 - 10000 + 1)) + 10000;
+        const random1 = random.toLocaleString();
+        console.log(random1);
         // const random1 = random.toString().split().splice(3, 0, '.').join();
-        fee.textContent = `${random} VNĐ`;
+        fee.textContent = `${random1} VNĐ`;
         optionCity.style.display = 'none';
         state.value = 'Việt Nam';
       });
@@ -158,7 +163,12 @@ district.addEventListener('focus', function () {
   // Hiển thị
   optionDistrict.style.display = 'block';
 });
-
+//🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞
+// submit.addEventListener('click', function (e) {
+//   // e.preventDefault();
+//   success.style.display = 'block';
+//   console.log('xinchao');
+// });
 // geolocation
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(

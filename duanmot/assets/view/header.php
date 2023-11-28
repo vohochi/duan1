@@ -36,7 +36,7 @@
       <ul>
         <li class="active"><a href="index.php">Home</a></li>
         <li><a href="index.php?page=about">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.php">Contact</a></li>
         <li><a href="view/sanpham.php">Sản phẩm</a></li>
         <li><a href="view/viewcart.php" class="">Giỏ hàng </a></li>
         <li><a href="view/admin_dashboard.php">Trang admin </a></li>
