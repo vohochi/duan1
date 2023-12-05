@@ -84,12 +84,19 @@
   }
 
 
+  small {
+    color: red;
+    display: none;
+  }
+
   /* 
   #bankOptions:active {
     background-color: ;
 
   } */
-
+  .form-check input {
+    cursor: pointer;
+  }
 
   #bankOptions {
     cursor: pointer;
@@ -115,33 +122,40 @@
           <h3 class="title">Địa chỉ thanh toán</h3>
           <div class="inputBox">
             <span>Thành phố, tỉnh :</span>
-            <input id="city" required type="text" placeholder="HCM">
+            <input id="city" type="text" placeholder="HCM">
             <div id="optionCity"></div>
+            <small>Vui lòng điền thông tin</small>
+
           </div>
           <div class="inputBox">
             <span>Quận, huyện :</span>
-            <input id="village" required type="text" placeholder="Cukuin...">
+            <input id="village" type="text" placeholder="Cukuin...">
             <div id="optionVillage"></div>
+            <small>Vui lòng điền thông tin</small>
           </div>
 
           <div class="inputBox">
             <span>Xã :</span>
-            <input id="district" required type="text" placeholder="eahu....">
+            <input id="district" type="text" placeholder="eahu....">
             <div id="optionDistrict"></div>
+            <small>Vui lòng điền thông tin</small>
+
           </div>
           <div class="inputBox">
             <span>Địa chỉ chi tiết:</span>
-            <input id="addressDetail" required type="text" placeholder="112/11 Hoàng hóa thám TX...">
+            <input id="addressDetail" type="text" placeholder="112/11 Hoàng hóa thám TX...">
+            <small>Vui lòng điền thông tin</small>
+
           </div>
 
           <div class="flex">
             <div class="inputBox">
               <span>state :</span>
-              <input id="state" required type="text" placeholder="state">
+              <input id="state" type="text" placeholder="state">
             </div>
             <div class="inputBox">
               <span>zip code :</span>
-              <input id="zipCode" required type="text" placeholder="123 456">
+              <input id="zipCode" type="text" placeholder="123 456">
             </div>
           </div>
 
@@ -161,34 +175,37 @@
           </div>
           <div class="my-3">
             <div class="form-check">
-              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="">
               <label class="form-check-label" for="credit">Credit card</label>
             </div>
             <div class="form-check">
-              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required=""
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input"
                 data-listener-added_3dd7a052="true">
               <label class="form-check-label" for="debit">Debit card</label>
             </div>
             <div class="form-check">
-              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required=""
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input"
                 data-listener-added_3dd7a052="true">
               <label class="form-check-label" for="paypal">PayPal</label>
             </div>
           </div>
           <div class="inputBox" id="scroll">
             <span>Lựa chọn ngân hàng :</span>
-            <input type="text" list="bankOptions" required id="input" class="scrollbar" placeholder="Sacombank...">
+            <input type="text" list="bankOptions" id="input" class="scrollbar" placeholder="Sacombank...">
             <span class="nameBank"></span>
             <div id="bankOptions"></div>
+            <small>Vui lòng điền thông tin</small>
           </div>
           <div class="inputBox">
             <span>Số thẻ :</span>
-            <input maxlength="16" type="text" required id="bin" placeholder="1111-2222-3333-4444">
+            <input maxlength="16" type="text" id="bin" placeholder="1111-2222-3333-4444">
             <div class="bin"></div>
+            <small>Vui lòng điền thông tin</small>
           </div>
           <div class="inputBox">
             <span>Tên của chủ thẻ:</span>
-            <input id="nameCard" required type="text" placeholder="BaoNguyen">
+            <input id="nameCard" type="text" placeholder="BaoNguyen">
+            <small>Vui lòng điền thông tin</small>
           </div>
 
           <div class="flex">

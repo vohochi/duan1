@@ -16,7 +16,10 @@ const exp = document.getElementById('exp');
 const delivery = document.getElementById('delivery');
 const submit = document.getElementById('submit');
 const success = document.getElementsByClassName('success');
-console.log(success);
+const optionVillage = document.getElementById('optionVillage');
+const optionDistrict = document.getElementById('optionDistrict');
+const small = document.querySelectorAll('small');
+console.log(small);
 
 // const res = await fetch('https://provinces.open-api.vn/api/');
 const showData = async function (e) {
@@ -38,8 +41,6 @@ const showData = async function (e) {
       div.appendChild(option);
       bankSelect.appendChild(div);
 
-      // bankSelect.appendChild(option);
-      //   console.log(e.val);
       option.addEventListener('click', function (choose) {
         const nameShort = choose.target.value;
         // console.log(`${nameShort} ${name}`);
@@ -56,9 +57,6 @@ const showData = async function (e) {
             console.log('Đã nhập đủ 10 số');
           } else console.log('chưa đủ');
         });
-        // if (bin.value === '9704230123456789') {
-        //   nameCard.value = 'Võ Hồ Chí';
-        // }
       });
     });
   } catch (error) {
@@ -73,68 +71,34 @@ const showCity = async function getLocationData() {
       const optionCity = document.getElementById('optionCity');
       const optionVillage = document.getElementById('optionVillage');
       let option = document.createElement('option');
-      // zipCode = information.name;
       option.textContent = information.name;
       optionCity.appendChild(option);
       option.addEventListener('click', function (choose) {
-        // const chosenCity = results.find((c) => {
-        //   console.log(c);
-        //   c.name === choose.target.textContent;
-        // });
         city.value = choose.target.textContent;
         const fee = document.getElementById('fee');
         zipCode.value = information.phone_code;
         const random = Math.floor(Math.random() * (40000 - 10000 + 1)) + 10000;
         const random1 = random.toLocaleString();
         console.log(random1);
-        // const random1 = random.toString().split().splice(3, 0, '.').join();
         fee.textContent = `${random1} VNĐ`;
         optionCity.style.display = 'none';
         state.value = 'Việt Nam';
-      });
-    });
-  } catch (error) {
-    console.error('Có lỗi xảy ra khi lấy dữ liệu');
-  }
-};
-const showVillage = async function () {
-  const res = await fetch('https://provinces.open-api.vn/api/?depth=3');
-  const results = await res.json();
-  try {
-    results.forEach((information) => {
-      const optionVillage = document.getElementById('optionVillage');
-      let option = document.createElement('option');
-      optionVillage.appendChild(option);
-      information.districts.forEach((e) => {
-        option.textContent = e.name;
-        const villageApi = e.name;
-        option.addEventListener('click', function (choose) {
-          village.value = e.name;
-          optionVillage.style.display = 'none';
-        });
-      });
-    });
-  } catch (error) {
-    console.error('Có lỗi xảy ra khi lấy dữ liệu');
-  }
-};
-const showDistrict = async function () {
-  const res = await fetch('https://provinces.open-api.vn/api/?depth=3');
-  const results = await res.json();
-  try {
-    // console.log(results);
-
-    results.forEach((information) => {
-      const optionDistrict = document.getElementById('optionDistrict');
-      let option = document.createElement('option');
-      optionDistrict.appendChild(option);
-      information.districts.map((item1) => {
-        return item1.wards.filter((item2) => {
-          // code here
-          option.textContent = item2.name;
-          option.addEventListener('click', function (choose) {
-            district.value = choose.target.textContent;
-            optionDistrict.style.display = 'none';
+        information.districts.forEach((villageAPI) => {
+          const option1 = document.createElement('option');
+          option1.textContent = villageAPI.name;
+          optionVillage.appendChild(option1);
+          option1.addEventListener('click', function (choose) {
+            village.value = choose.target.textContent;
+            optionVillage.style.display = 'none';
+            villageAPI.wards.forEach((ward) => {
+              const option2 = document.createElement('option');
+              option2.textContent = ward.name;
+              optionDistrict.appendChild(option2);
+              option2.addEventListener('click', function (choose) {
+                district.value = choose.target.textContent;
+                optionDistrict.style.display = 'none';
+              });
+            });
           });
         });
       });
@@ -144,7 +108,52 @@ const showDistrict = async function () {
   }
 };
 
-Promise.all([showCity(), showData(), showVillage(), showDistrict()]);
+// const showVillage = async function () {
+//   const res = await fetch('https://provinces.open-api.vn/api/?depth=3');
+//   const results = await res.json();
+//   try {
+//     results.forEach((information) => {
+//       const optionVillage = document.getElementById('optionVillage');
+//       let option = document.createElement('option');
+//       optionVillage.appendChild(option);
+//       information.districts.forEach((e) => {
+//         option.textContent = e.name;
+//         const villageApi = e.name;
+//         option.addEventListener('click', function (choose) {
+//           village.value = e.name;
+//           optionVillage.style.display = 'none';
+//         });
+//       });
+//     });
+//   } catch (error) {
+//     console.error('Có lỗi xảy ra khi lấy dữ liệu');
+//   }
+// };
+// const showDistrict = async function () {
+//   const res = await fetch('https://provinces.open-api.vn/api/?depth=3');
+//   const results = await res.json();
+//   try {
+
+//     results.forEach((information) => {
+//       const optionDistrict = document.getElementById('optionDistrict');
+//       let option = document.createElement('option');
+//       optionDistrict.appendChild(option);
+//       information.districts.map((item1) => {
+//         return item1.wards.filter((item2) => {
+//           option.textContent = item2.name;
+//           option.addEventListener('click', function (choose) {
+//             district.value = choose.target.textContent;
+//             optionDistrict.style.display = 'none';
+//           });
+//         });
+//       });
+//     });
+//   } catch (error) {
+//     console.error('Có lỗi xảy ra khi lấy dữ liệu');
+//   }
+// };
+
+Promise.all([showCity(), showData()]);
 
 // event
 input.addEventListener('focus', function () {
@@ -170,15 +179,25 @@ district.addEventListener('focus', function () {
 //   console.log('xinchao');
 // });
 // geolocation
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(
-    function (position) {
-      const { latitude } = position.coords;
-      const { longtitude } = position.coords;
-      console.log(latitude, longtitude);
-    },
-    function () {
-      alert('Không thể lấy được vị trí của bạn');
+// event  checkValid
+let i = 0;
+let valid = true;
+const checkRequired = (inputArr) => {
+  inputArr.forEach((input) => {
+    if (input.value.trim() === '') {
+      small[i++].style.display = 'block';
+      console.log('check');
+      valid = false;
+      return container;
+    } else {
+      input = small[i++].remove();
     }
-  );
-}
+  });
+};
+
+container.addEventListener('submit', (submit) => {
+  checkRequired([village, city, district, input, addressDetail]);
+  if (!valid) {
+    submit.preventDefault();
+  }
+});
